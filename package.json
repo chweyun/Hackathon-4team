@@ -10,7 +10,7 @@
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build"
   },
-  "engine": {
+  "engines": {
     "node": "16.15.0",
     "npm": "8.15.1"
   },
