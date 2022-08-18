@@ -3,7 +3,7 @@ const http = require("http");
 const socketIO = require("socket.io");
 const cors = require("cors");
 const { timeLog } = require("console");
-const port = 5000;
+const port = process.env.PORT || 5000;
 const app = express();
 const path = require("path");;
 
@@ -12,6 +12,10 @@ app.use(cors());
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"))
 })
+
+app.listen(port, () => {
+  console.log("success!")
+});
 
 const server = http.createServer(app);
 // socketio 생성후 서버 인스턴스 사용
